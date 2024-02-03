@@ -13,12 +13,20 @@
        
 
 <div id="pomodoro">
-    <form ><input name="newtask" id="newtask" type="text">
+    <form ><input name="newtask" id="newtask" maxlength="20" type="text">
+      <input type="text" name="descr" id="descr">
     <select name="column" id="column">
         <option value="1">TO DO</option>
         <option value="2">IN PROGRESS</option>
         <option value="3">DONE</option>
     </select>
+    <select name="tipò" id="tipo">
+      <option value="0" selected>General</option>
+    <option value="1">Backend</option>
+    <option value="2">Frontend</option>
+    <option value="3">Design</option>
+    </select> 
+    
     </form>
 
     <button onclick="newTask();">prueba</button>
