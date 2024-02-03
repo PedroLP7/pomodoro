@@ -1,49 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pomodoro</title>
-    <link rel="stylesheet" type="text/css" href="./css/style.css" />
-    <h1>POMODORO KANBAN</h1>
-  </head>
-  
-  <body>
-   
-       
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pomodoro</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
+</head>
+<body class="bg-light">
 
-<div id="pomodoro">
-    <form >
-      <label for="newtask"> Task Name</label>
-      <input name="newtask" id="newtask" maxlength="20" type="text">
-      <label for="desc">Task description</label>
-      <input type="text" name="descr" id="descr">
-      <label for="column">Column</label>
-    <select name="column" id="column">
-        <option value="1">TO DO</option>
-        <option value="2">IN PROGRESS</option>
-        <option value="3">DONE</option>
-    </select>
-    <label for="tipo">Task Type</label>
-    <select name="tipo" id="tipo">
-      <option value="0" selected>General</option>
-    <option value="1">Backend</option>
-    <option value="2">Frontend</option>
-    <option value="3">Design</option>
-    </select> 
+  <div class="container ">
     
-    </form>
+      <form>
+        <label for="newtask">Task Name</label>
+        <input name="newtask" id="newtask" maxlength="20" type="text">
+        <label for="desc">Task description</label>
+        <input type="text" name="descr" id="descr">
+        <label for="column">Column</label>
+        <select name="column" id="column" class="form-control">
+          <option value="1">TO DO</option>
+          <option value="2">IN PROGRESS</option>
+          <option value="3">DONE</option>
+        </select>
+        <label for="tipo">Task Type</label>
+        <select name="tipo" id="tipo" class="form-control">
+          <option value="0" selected>General</option>
+          <option value="1">Backend</option>
+          <option value="2">Frontend</option>
+          <option value="3">Design</option>
+        </select>
+      </form>
+      <button class="btn btn-primary mt-3" onclick="newTask();">Create Task</button>
+    </div>
+    <div class="container">
 
-    <button  class="button"onclick="newTask();">Create Task</button>
-</div>
+      <div id="pomodoro"></div>
+    </div>
+    
+ 
 
-
-
-
-
-             
-
-
- <script src="./app/script.js"></script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="./app/script.js"></script>
+</body>
 </html>
