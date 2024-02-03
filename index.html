@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pomodoro</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
-    <h1>POMODORO SHIT</h1>
+    <h1>POMODORO KANBAN</h1>
   </head>
   
   <body>
@@ -13,14 +13,19 @@
        
 
 <div id="pomodoro">
-    <form ><input name="newtask" id="newtask" maxlength="12" type="text">
+    <form >
+      <label for="newtask"> Task Name</label>
+      <input name="newtask" id="newtask" maxlength="20" type="text">
+      <label for="desc">Task description</label>
       <input type="text" name="descr" id="descr">
+      <label for="column">Column</label>
     <select name="column" id="column">
         <option value="1">TO DO</option>
         <option value="2">IN PROGRESS</option>
         <option value="3">DONE</option>
     </select>
-    <select name="tipò" id="tipo">
+    <label for="tipo">Task Type</label>
+    <select name="tipo" id="tipo">
       <option value="0" selected>General</option>
     <option value="1">Backend</option>
     <option value="2">Frontend</option>
@@ -29,7 +34,7 @@
     
     </form>
 
-    <button onclick="newTask();">prueba</button>
+    <button  class="button"onclick="newTask();">Create Task</button>
 </div>
 
 

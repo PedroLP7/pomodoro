@@ -116,6 +116,7 @@ function newTask() {
   column.appendChild(newTask);
   setTimeout(function () {
     document.getElementById("newtask").value = "";
+    document.getElementById("descr").value = "";
   }, 0);
 }
 
@@ -156,19 +157,19 @@ function tasktipe(newtask) {
   switch (tipo) {
     case "1":
       newtask.dataset.tipo = "Backend";
-      newtask.style.backgroundColor = "blue";
+      newtask.style.backgroundColor = "#0099FF";
       break;
     case "2":
       newtask.dataset.tipo = "Frontend";
-      newtask.style.backgroundColor = "red";
+      newtask.style.backgroundColor = "#FF9933";
       break;
     case "3":
       newtask.dataset.tipo = "Design";
-      newtask.style.backgroundColor = "pink";
+      newtask.style.backgroundColor = "#FF99FF";
       break;
     case "0":
       newtask.dataset.tipo = "General";
-      newtask.style.backgroundColor = "grey";
+      newtask.style.backgroundColor = "#669999";
   }
 }
 

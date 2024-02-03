@@ -15,7 +15,7 @@
   #dragzone1 {
     position: relative;
     left: 400px;
-    top: 200px;
+    top: 100px;
     background-color: #9c9c9c;;
 
   }
@@ -23,14 +23,14 @@
   #dragzone2 {
     position: relative;
     left: 655px;
-    bottom: 240px;
+    bottom: 340px;
     background-color: #00CCFF;
   }
   
   #dragzone3 {
     position: relative;
     left: 910px;
-    bottom: 680px;
+    bottom: 780px;
     background-color: #00CC66;
   }
   
@@ -43,7 +43,7 @@
 }
 
 .task {
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: white;
   color: black;
   width: 225px;
@@ -51,13 +51,14 @@
   left: 5%;
   margin-top: 2px;
   height: auto;
-  background-color: #339933;
+  
   
   
 }
 
 
 .tasktext {
+  
     font-weight: bold;
   padding-top: 1px;
   user-select: none;
@@ -95,7 +96,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     padding-left: 5px;
-    font-size: 12px;
+    font-size: 8px;
 }
 
 
@@ -143,21 +144,21 @@
 
 .titlecolumn1 {
     color: #3498db; /* Color para TO DO */
-    bottom: 1200px;
+    bottom: 1300px;
     left: 390px;
     background-color: #9c9c9c;
 }
 
 .titlecolumn2 {
     color: #e67e22; /* Color para IN PROGRESS */
-    bottom: 1260px;
+    bottom: 1360px;
     left: 645px;
     background-color: #00CCFF;
 }
 
 .titlecolumn3 {
     color: #27ae60; /* Color para DONE */
-    bottom: 1320px;
+    bottom: 1420px;
     left: 900px;
     background-color: #00CC66;
 }
@@ -171,10 +172,93 @@
 
   .task:hover .deleteButton {
     display: block;
+
   }
+  .task:hover .tasktext {
+    padding-right: 80px; 
+  }
+ 
 
 
   body{
     background-color: #f0f0f0;
+    overflow: hidden;
+    
     
   }
+
+  .deleteButton {
+    
+    width:65px;
+    background-color: #00CC66;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+   
+    
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+ 
+
+  
+ .button{
+   margin-top: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #00CC66;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #00CCFF;
+ }
+  
+  
+  
+
+  
+  #pomodoro-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px;
+  }
+  
+  #pomodoro {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  form {
+    display: grid;
+    gap: 15px;
+  }
+  
+  label {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
