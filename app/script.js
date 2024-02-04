@@ -184,3 +184,19 @@ function deleteTask() {
     taskToRemove.parentNode.removeChild(taskToRemove);
   }
 }
+
+createButton();
+
+function createButton(){
+
+let timerbutton = document.createElement("button");
+let imgbutton = document.createElement("img");
+timerbutton.classList.add("timerbutton");
+imgbutton.classList.add("imgbutton");
+
+timerbutton.id = "timerbutton";
+imgbutton.src = "./img/pomodoro.png";
+imgbutton.id = "imgbutton";
+timerbutton.appendChild(imgbutton);
+pomodoro.appendChild(timerbutton);
+}
