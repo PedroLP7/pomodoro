@@ -82,13 +82,16 @@
 }
 
 .taskdescr:hover {
-  white-space: normal;
+  white-space: pre-wrap; /* Permitir saltos de línea y ajustar automáticamente la altura */
   overflow: visible;
-  text-overflow: wrap;
-  padding-top: 1px;
+  text-overflow: clip;
+  padding-top: 5px; /* Ajusta según sea necesario */
   padding-left: 5px;
   font-size: 16px;
+  word-break: break-word;
+  height: auto; /* La altura se ajustará automáticamente al contenido */
 }
+
 .tasktime{
     padding-bottom: 3px;
     user-select: none;
@@ -172,8 +175,13 @@
 
   .task:hover .deleteButton {
     display: block;
+    
+     
+    
 
   }
+
+
   .task:hover .tasktext {
     padding-right: 80px; 
   }
