@@ -1,5 +1,9 @@
 let numtask = 0;
 let pomodoro = document.getElementById("pomodoro");
+let pause = false;
+
+createTimer();
+
 function dropHandler(event) {
   event.preventDefault();
 
@@ -185,18 +189,67 @@ function deleteTask() {
   }
 }
 
-createButton();
 
-function createButton(){
 
-let timerbutton = document.createElement("button");
-let imgbutton = document.createElement("img");
-timerbutton.classList.add("timerbutton");
-imgbutton.classList.add("imgbutton");
+function createTimer(){
+  let timerdiv=document.getElementById("timerdiv");
 
-timerbutton.id = "timerbutton";
-imgbutton.src = "./img/pomodoro.png";
-imgbutton.id = "imgbutton";
-timerbutton.appendChild(imgbutton);
-pomodoro.appendChild(timerbutton);
+
+ 
+  let timer= document.createElement("p");
+timer.dataset.estado="parado";
+  timer.classList.add("timer");
+  timer.id="timer";
+  timer.textContent="25:00";
+  timerdiv.appendChild(timer);
+  
+
+
+
+}
+let remainingTime = 0;
+
+
+
+let intervalId;
+function startTimer() {
+  let timer = document.getElementById("timer");
+  let timeInput = document.getElementById("time");
+  let time = timeInput.value;
+  let estado = timer.dataset.estado;
+
+  if (!pause && estado === "parado") {
+    if (time === "1") {
+      remainingTime = 25 * 60; // 25 minutos en segundos
+    } else if (time === "2") {
+      remainingTime = 15 * 60; // 15 minutos en segundos
+    } else if (time === "3") {
+      remainingTime = 5 * 60; // 5 minutos en segundos
+    }
+
+    intervalId = setInterval(function () {
+      timer.dataset.estado = "activo";
+
+      if (remainingTime > 0) {
+        let minutes = Math.floor(remainingTime / 60);
+        let seconds = remainingTime % 60;
+        remainingTime--;
+
+        let newTime = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+        timer.textContent = newTime;
+      } else {
+        clearInterval(intervalId);
+        timer.dataset.estado = "parado";
+        pause = false;
+       
+      }
+    }, 1000);
+
+    pause = true;
+    timer.dataset.estado = "activo";
+  } else {
+    clearInterval(intervalId);
+    pause = false;
+    timer.dataset.estado = "parado";
+  }
 }

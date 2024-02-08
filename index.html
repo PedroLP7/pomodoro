@@ -8,22 +8,36 @@
   <link rel="stylesheet" type="text/css" href="./css/style.css" />
 </head>
 <body class="bg-light">
+  
 
   <div class="container mt-4">
-   
+    <div class=" col-12 col-md-2 timerchose">
+      <select name="time" id="time">
+        <option value="1">25:00</option>
+        <option value="2">15:00</option>
+        <option value="3">5:00</option>
+      </select>
+    </div>
+    <div id="timerdiv">
+       <button onclick="startTimer();" id="buttontimer"class="btn btn-light timerbutton"><img  clas="imgbutton"src="./img/pomodoro.png" alt="" height="45px" width="45px"></button>
+
+    </div>
       <form>
-        <label for="newtask">Task Name</label>
-        <input name="newtask" id="newtask" maxlength="20" type="text">
-        <label for="desc">Task description</label>
-        <input type="text" name="descr" id="descr">
+        
+          <label class=" col-12 col-md-2" for="newtask">Task Name</label>
+          <input class="form-control col-12 col-md-2" name="newtask" id="newtask" maxlength="20" type="text">
+      
+     
+        <label class="col-12 col-md-2" for="desc">Task description</label>
+        <input class="form-control col-12 col-md-2" type="text" name="descr" id="descr">
         <label for="column">Column</label>
-        <select name="column" id="column" class="form-control">
+        <select name="column" id="column" class="form-control col-12 col-md-2">
           <option value="1">TO DO</option>
           <option value="2">IN PROGRESS</option>
           <option value="3">DONE</option>
         </select>
         <label for="tipo">Task Type</label>
-        <select name="tipo" id="tipo" class="form-control">
+        <select name="tipo" id="tipo" class="form-control col-12 col-md-2">
           <option value="0" selected>General</option>
           <option value="1">Backend</option>
           <option value="2">Frontend</option>

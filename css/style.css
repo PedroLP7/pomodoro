@@ -14,23 +14,23 @@
   
   #dragzone1 {
     position: relative;
-    left: 690px;
-    top: 50px;
+    left: 150px;
+   top: 20px;
     background-color: #9c9c9c;;
 
   }
   
   #dragzone2 {
     position: relative;
-    left: 970px;
-    bottom: 370px;
+    left: 410px;
+    bottom: 400px;
     background-color: #00CCFF;
   }
   
   #dragzone3 {
     position: relative;
-    left: 1250px;
-    bottom: 790px;
+   left: 670px; 
+   bottom: 820px;
     background-color: #00CC66;
   }
   
@@ -147,22 +147,22 @@
 
 .titlecolumn1 {
     color: #3498db; /* Color para TO DO */
-    bottom: 1270px;
-    left: 680px;
+    bottom: 1300px;
+    left: 140px;
     background-color: #9c9c9c;
 }
 
 .titlecolumn2 {
     color: #e67e22; /* Color para IN PROGRESS */
-    bottom: 1330px;
-    left: 960px;
+    bottom: 1360px;
+    left: 400px;
     background-color: #00CCFF;
 }
 
 .titlecolumn3 {
     color: #27ae60; /* Color para DONE */
-    bottom: 1390px;
-    left: 1240px;
+    bottom: 1420px;
+    left: 660px; 
     background-color: #00CC66;
 }
 
@@ -256,7 +256,28 @@
     font-size: 14px;
   }
   
-.imgbutton{
-  height: 100px;
+#pomodoro{
+  position: relative;
+ left:300px ;
+  bottom: 350px;
+  width: 800px;
+  height: 700px;
+  
+}
+
+
+
+.timer{
+  position: relative;
+  height: 40px;
   width: 100px;
+left: 20px;
+top: 10px;
+}
+ 
+.timerchose{
+  position: relative;
+  
+  left: 70px;
+  top: 50px;
 }
