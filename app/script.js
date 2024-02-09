@@ -1,6 +1,7 @@
 let numtask = 0;
 let pomodoro = document.getElementById("pomodoro");
-let pause = false;
+let startmusic = new Audio("../media/startmusic.mp3");
+let endmusic = new Audio("../media/endmusic.mp3");
 
 createTimer();
 
@@ -207,24 +208,30 @@ timer.dataset.estado="parado";
 
 
 }
+
+
+
+
 let remainingTime = 0;
-
-
-
 let intervalId;
+let pause = false;
+
 function startTimer() {
   let timer = document.getElementById("timer");
   let timeInput = document.getElementById("time");
   let time = timeInput.value;
   let estado = timer.dataset.estado;
-
+startmusic.play();
   if (!pause && estado === "parado") {
-    if (time === "1") {
-      remainingTime = 25 * 60; // 25 minutos en segundos
-    } else if (time === "2") {
-      remainingTime = 15 * 60; // 15 minutos en segundos
-    } else if (time === "3") {
-      remainingTime = 5 * 60; // 5 minutos en segundos
+    if (remainingTime === 0) {
+      // Solo configurar el tiempo restante si no hay un temporizador en curso
+      if (time === "1") {
+        remainingTime = 3 * 60; // 25 minutos en segundos
+      } else if (time === "2") {
+        remainingTime = 2 * 60; // 15 minutos en segundos
+      } else if (time === "3") {
+        remainingTime = 1 * 60; // 5 minutos en segundos
+      }
     }
 
     intervalId = setInterval(function () {
@@ -241,7 +248,9 @@ function startTimer() {
         clearInterval(intervalId);
         timer.dataset.estado = "parado";
         pause = false;
-       
+        remainingTime = 0;
+        timer.textContent = "0:00"; 
+        endmusic.play();
       }
     }, 1000);
 
