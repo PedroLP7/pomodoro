@@ -26,6 +26,7 @@ function dropHandler(event) {
     if (originalColumn.contains(originalElement)) {
       originalColumn.removeChild(originalElement);
     }
+    // adjustDragzoneHeight(event.target);
   }
 }
 
@@ -75,7 +76,7 @@ function dragStartHandler(event) {
 function newTask() {
   console.log("Nueva tarea");
   let textvalue = document.getElementById("newtask").value;
-  let inputcolumn = document.getElementById("column").value;
+  let inputcolumn = 1;
   let column = document.getElementById("dragzone" + inputcolumn);
   let descr = document.getElementById("descr").value;
   let currentTime = new Date();
@@ -221,16 +222,16 @@ function startTimer() {
   let timeInput = document.getElementById("time");
   let time = timeInput.value;
   let estado = timer.dataset.estado;
-startmusic.play();
+
   if (!pause && estado === "parado") {
     if (remainingTime === 0) {
       // Solo configurar el tiempo restante si no hay un temporizador en curso
       if (time === "1") {
-        remainingTime = 3 * 60; // 25 minutos en segundos
+        remainingTime = 25 * 60; // 25 minutos en segundos
       } else if (time === "2") {
-        remainingTime = 2 * 60; // 15 minutos en segundos
+        remainingTime = 15 * 60; // 15 minutos en segundos
       } else if (time === "3") {
-        remainingTime = 1 * 60; // 5 minutos en segundos
+        remainingTime = 5 * 60; // 5 minutos en segundos
       }
     }
 
@@ -256,9 +257,18 @@ startmusic.play();
 
     pause = true;
     timer.dataset.estado = "activo";
+    startmusic.play();
   } else {
     clearInterval(intervalId);
     pause = false;
     timer.dataset.estado = "parado";
   }
 }
+// function adjustDragzoneHeight(dragzone) {
+//   const originalHeight = dragzone.clientHeight;
+//   const newHeight = dragzone.scrollHeight;
+
+//   if (newHeight > originalHeight) {
+//     dragzone.style.height = newHeight + "px";
+//   }
+// }
